@@ -34,7 +34,7 @@ def upload(username, file):
 
 def main(username, password, files):
 	login(username, password)
-	if files is None:
+	if len(files) == 0:
 		files = list()
 	for file in files:
 		upload(username, file)

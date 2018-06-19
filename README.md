@@ -33,52 +33,9 @@ Twinkle是维基人用于快速执行常见维护工作（如提交删除候选�
 
     awk 'FNR==1{print ""}{print}' twinkle.js modules/*.js > alltwinkle.js
 
-然后就可以把`alltwinkle.js`上传到[MediaWiki:Gadget-Twinkle.js][]。这并未包含`morebits.js`和`morebits.css`，它们需要被分开上传。
-
-如果`morebits.js`和/或`morebits.css`需要更新，它们应当被同步到[MediaWiki:Gadget-morebits.js][]和[MediaWiki:Gadget-morebits.css][]。
-
-[MediaWiki:Gadgets-definition][]应当包含这一行：
-
-    * Twinkle[ResourceLoader|dependencies=mediawiki.user,mediawiki.util,mediawiki.RegExp,mediawiki.Title,jquery.ui.dialog,jquery.tipsy|rights=autoconfirmed]|morebits.js|morebits.css|Twinkle.js|friendlyshared.js|friendlytag.js|friendlytalkback.js|twinklearv.js|twinklebatchdelete.js|twinklebatchundelete.js|twinkleblock.js|twinkleclose.js|twinkleconfig.js|twinklecopyvio.js|twinkledelimages.js|twinklediff.js|twinklefluff.js|twinkleimage.js|twinkleprotect.js|twinklespeedy.js|twinkleunlink.js|twinklewarn.js|twinklexfd.js
-
-### 使用`sync.pl`同步
-
-存在一个名为`sync.pl`的同步脚本，可用于向维基百科上拉取和推送文件。
-
-这个程序依赖于Perl 5.10和模块[`Git::Repository`][Git::Repository]与[`MediaWiki::Bot`][MediaWiki::Bot]，可轻易用[`App::cpanminus`][App::cpanminus]安装：
-
-    cpanm --sudo install Git::Repository MediaWiki::Bot
-
-注意：在一些系统上，您可能需要安装附加的模块如`File::Slurp`、`Getopt::Long::Descriptive`和其他依赖。建议您通过系统的包管理工具安装这些（如`apt-get install libgetopt-long-descriptive-perl`），但您也可以通过cpanm来安装。
-
-在运行这个程序时，您可以在命令行中使用`--username`和`--password`参数提供您的凭据，但更推荐将它们保存到`~/.mwbotrc`的文件中，采用以下格式：
-
-    username => "Username",
-    password => "password",
-    base     => "User::Username"
-
-其中`base`是`pull`和`push`文件时的wiki路径前缀。如果你不指定`base`参数，文件将会被推到MediaWiki名字空间。
-
-留意您的工作目录**不需要**是干净的；亦可以`stash`或`commit`您的修改。
-
-要`pull`用户Foobar的修改（如`User:Foobar/morebits.js`），做：
-
-    ./sync.pl --base User:Foobar --pull morebits.js
-
-要`push`您的修改到Foobar的wiki页，做：
-
-    ./sync.pl --base User:Foobar --push morebits.js
-
-也有一`deploy`命令来部署所有Twinkle文件。
-
-    ./sync.pl --deploy twinkle.js
-    make deploy
-
-请留意，要同步到一个自定义的维基，您也需要指定--lang和--family参数。比如，要同步文件到`test.wmflabs.org`，您应当指定`--lang=test --family=wmflabs`。如果您希望使用`make deploy`来部署所有文件，您也可能需要将相关参数通过Makefile传递给脚本，如：
-
-    make ARGS="--lang=test --family=wmflabs" deploy
-
-编辑摘要会包含分支和上次提交的SHA。
+運行指令：
+    所有檔案：`python upload.py [用戶名] [密碼]`
+    部分檔案：`python upload.py [用戶名] [密碼] [檔案1] [檔案2] ... `
 
 格式指引
 --------

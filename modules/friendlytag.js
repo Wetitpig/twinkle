@@ -1055,6 +1055,7 @@ Twinkle.tag.multipleIssuesExceptions = [
 	'notability',
 	'notmandarin',
 	"substub",
+	"recat",
 	'requested move',
 	'uncategorized'
 ];
@@ -1071,7 +1072,7 @@ Twinkle.tag.callbacks = {
 
 		var addTag = function friendlytagAddTag( tagIndex, tagName ) {
 			var currentTag = "";
-			if( tagName === 'uncategorized' || tagName === 'catimprove' ) {
+			if( tagName === 'uncategorized' || tagName === 'catimprove' || tagName === 'recat' ) {
 				pageText += '\n\n{{' + tagName +
 					'|time={{subst:#time:c}}}}';
 			} else {

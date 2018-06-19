@@ -407,21 +407,28 @@ Twinkle.tag.article.tags = wgULS({
 	"onesource": "极大或完全地依赖于某个单一的来源",
 	"original research": "可能包含原创研究或未查证内容",
 	"orphan": "没有或只有很少链入页面",
+	"overcolored": "滥用色彩",
 	"overlinked": "含有过多、重复、或不必要的内部链接",
 	"overly detailed": "包含太多过度细节内容",
 	"plot": "可能包含过于详细的剧情摘要",
 	"pov": "中立性有争议。内容、语调可能带有明显的个人观点或地方色彩",
 	"primarysources": "依赖第一手来源",
 	"prose": "使用了日期或时间列表式记述，需要改写为连贯的叙述性文字",
+	"recat": "过多页面分类",
 	"refimprove": "需要补充更多来源",
+	"repetition": "重复内容",
 	"requested move": "建议将此页面移动到新名称",
 	"review": "阅读起来类似评论，需要清理",
 	"rewrite": "不符合维基百科的质量标准，需要完全重写",
 	"roughtranslation": "翻译品质不佳",
 	"substub": "过于短小",
+	"spacing": "不易读",
+	"too many see alsos": "过多参见",
+	"too many photos": "过多照片",
 	"trivia": "应避免有陈列杂项、琐碎资料的部分",
 	"uncategorized": "缺少页面分类",
 	"underlinked": "需要更多内部链接以构筑百科全书的链接网络",
+	"undisclosed paid": "编缉或创建可能是为了秘密报酬",
 	"unencyclopedic": "可能不适合写入百科全书",
 	"unreferenced": "没有列出任何参考或来源",
 	"update": "当前条目或章节需要更新",
@@ -469,21 +476,28 @@ Twinkle.tag.article.tags = wgULS({
 	"onesource": "極大或完全地依賴於某個單一的來源",
 	"original research": "可能包含原創研究或未查證內容",
 	"orphan": "沒有或只有很少連入頁面",
+	"overcolored": "濫用色彩",
 	"overlinked": "含有過多、重複、或不必要的內部連結",
 	"overly detailed": "包含太多過度細節內容",
 	"plot": "可能包含過於詳細的劇情摘要",
 	"pov": "中立性有爭議。內容、語調可能帶有明顯的個人觀點或地方色彩",
 	"primarysources": "依賴第一手來源",
 	"prose": "使用了日期或時間列表式記述，需要改寫為連貫的敘述性文字",
+	"recat": "過多頁面分類",
 	"refimprove": "需要補充更多來源",
+	"repetition": "重複內容",
 	"requested move": "建議將此頁面移動到新名稱",
 	"review": "閱讀起來類似評論，需要清理",
 	"rewrite": "不符合維基百科的質量標準，需要完全重寫",
 	"roughtranslation": "翻譯品質不佳",
+	"spacing": "不易讀",
 	"substub": "過於短小",
+	"too many photos": "過多照片",
+	"too many see alsos": "過多參見",
 	"trivia": "應避免有陳列雜項、瑣碎資料的部分",
 	"uncategorized": "缺少頁面分類",
 	"underlinked": "需要更多內部連結以構築百科全書的連結網絡",
+	"undisclosed paid": "編緝或創建可能是為了秘密報酬",
 	"unencyclopedic": "可能不適合寫入百科全書",
 	"unreferenced": "沒有列出任何參考或來源",
 	"update": "當前條目或章節需要更新",
@@ -500,12 +514,16 @@ Twinkle.tag.article.tagCategories = wgULS({
 		"常规清理": [
 			"cleanup",
 			"cleanup-jargon",
-			"copyedit"
+			"copyedit",
+			"overcolored",
+			"spacing"
 		],
 		"可能多余的内容": [
 			"copypaste",
 			"external links",
-			"non-free"
+			"non-free",
+			"too many photos",
+			"too many see alsos"
 		],
 		"结构和导言": [
 			"lead section",
@@ -533,8 +551,10 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"review"
 		],
 		"内容": [
-			"missing information", // has subcategories and special-cased code
 			"expand language", // has subcategories and special-cased code
+			"expand",
+			"missing information", // has subcategories and special-cased code
+			"repetition",
 			"substub",
 			"unencyclopedic"
 		],
@@ -554,6 +574,7 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"globalize",
 			"hoax",
 			"pov",
+			"undisclosed paid",
 			"weasel"
 		],
 		"可供查证和来源": [
@@ -576,15 +597,16 @@ Twinkle.tag.article.tagCategories = wgULS({
 		],
 		"链接": [
 			"dead end",
-			"underlinked",
 			"orphan",
-			"overlinked"
+			"overlinked",
+			"underlinked"
 		],
 		"参考技术": [
 			"citation style"
 		],
 		"分类": [
 			"catimprove",
+			"recat",
 			"uncategorized"
 		]
 	},

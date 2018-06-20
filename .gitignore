@@ -1,11 +1,11 @@
 .mediawiki-bot-*
-twinkle.js
 /.settings
 /.project
 jsl.conf
 stash*.txt
 stash*.diff
 *.jsX
+*.pyc
 
 # Windows
 Thumbs.db

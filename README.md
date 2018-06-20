@@ -46,6 +46,14 @@ Twinkle是维基人用于快速执行常见维护工作（如提交删除候选�
 
 `docker build -t registry.gitlab.com/wetitpig/twinkle:latest .`
 
+要直接下載`Docker`，則運行：
+
+`docker pull registry.gitlab.com/wetitpig/twinkle:latest`
+
+運行指令：
+
+`docker run -v $(twinkle所在的目錄):/twinkle --name twinkle-dev registry.gitlab.com/wetitpig/twinkle:latest`
+
 若果使用`Ubuntu`環境，則直接運行以下指令即可：
 
 `bash dockerscript.sh`

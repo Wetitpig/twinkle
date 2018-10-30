@@ -4,6 +4,7 @@ import mwclient
 import sys
 from subprocess import Popen, PIPE
 from time import sleep
+import os
 
 site = mwclient.Site('zh.wikipedia.org')
 
@@ -15,7 +16,10 @@ def login(username, password):
 		print e[1]['result']
 
 def list():
-	cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) -printf '%P\n'"], shell=True, stdout=PIPE)
+	if os.path.isfile(os.environ['PREFIX'] + "/bin/busybox"):
+		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) | sed 's|^./||'"], shell=True, stdout=PIPE)
+	else:
+		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) -printf '%P\n'"], shell=True, stdout=PIPE)
 	files = cmd.communicate()[0].split('\n')
 	files = files[:-1]
 	print "Number of Files Found: " + str(len(files))

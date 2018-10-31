@@ -12,31 +12,31 @@ site = SetSite('zh.wikipedia.org')
 def login(username, password):
 	try:
 		site.login(username, password)
-		print "Login successful as " + username
+		print "Login successful as %s" % username
 	except LoginError as e:
 		print e[1]['result']
 
 def list():
-	if path.isfile(environ['PREFIX'] + "/bin/busybox"):
+	if path.isfile("%s/bin/busybox" % environ['PREFIX']):
 		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) | sed 's|^./||'"], shell=True, stdout=PIPE)
 	else:
 		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) -printf '%P\n'"], shell=True, stdout=PIPE)
 	files = cmd.communicate()[0].split('\n')
 	files = files[:-1]
-	print "Number of Files Found: " + str(len(files))
+	print "Number of Files Found: %s" % str(len(files))
 	return files
 
 def upload(username, file):
-	page = site.Pages["User:" + username + "/" + file]
+	page = site.Pages["User: %s/%s" % (username, file)]
 	fp = open(file, "r")
 	text = fp.read()[:-1].rstrip()
 	fp.close()
 	if sha256(page.text().encode("utf-8")).hexdigest() == sha256(text).hexdigest():
-		print file + " unchanged"
+		print "%s unchanged" % file
 		return 0
 	comment = "更新Twinkle至Gitlab最新版本。"
 	page.save(text.decode("utf-8"), summary=comment, bot=False)
-	print "Uploaded " + file
+	print "Uploaded %s" % file
 	return 20
 
 def main(username, password, files):

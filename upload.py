@@ -1,13 +1,13 @@
 # encoding=utf-8
 
-import mwclient
+from mwclient import Site as SetSite
 from sys import argv
 from os import path, environ
 from subprocess import Popen, PIPE
 from time import sleep
 from hashlib import sha256
 
-site = mwclient.Site('zh.wikipedia.org')
+site = SetSite('zh.wikipedia.org')
 
 def login(username, password):
 	try:

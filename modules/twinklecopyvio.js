@@ -121,16 +121,11 @@ Twinkle.copyvio.callbacks = {
 				usertalkpage.setEditSummary("通知：页面[[" + mw.config.get('wgPageName') + "]]疑似侵犯版权" + Twinkle.getPref('summaryAd'));
 				usertalkpage.setTags(Twinkle.getPref('revisionTags'));
 				usertalkpage.setCreateOption('recreate');
-				switch (Twinkle.getPref('copyvioWatchUser')) {
-					case 'yes':
-						usertalkpage.setWatchlist(true);
-						break;
-					case 'no':
-						usertalkpage.setWatchlistFromPreferences(false);
-						break;
-					default:
-						usertalkpage.setWatchlistFromPreferences(true);
-						break;
+				if (Twinkle.getPref('copyvioWatchUser') == 'no') {
+					usertalkpage.setWatchlistFromPreferences(false);
+				}
+				else {
+					usertalkpage.setWatchlistFromPreferences(true);
 				}
 				usertalkpage.setFollowRedirect(true);
 				usertalkpage.append();
@@ -152,16 +147,11 @@ Twinkle.copyvio.callbacks = {
 		pageobj.setPageText(tag);
 		pageobj.setEditSummary(wgULS("本页面疑似侵犯版权", "本頁面疑似侵犯版權") + Twinkle.getPref('summaryAd'));
 		pageobj.setTags(Twinkle.getPref('revisionTags'));
-		switch (Twinkle.getPref('copyvioWatchPage')) {
-			case 'yes':
-				pageobj.setWatchlist(true);
-				break;
-			case 'no':
-				pageobj.setWatchlistFromPreferences(false);
-				break;
-			default:
-				pageobj.setWatchlistFromPreferences(true);
-				break;
+		if (Twinkle.getPref('copyvioWatchPage') == 'no') {
+			pageobj.setWatchlistFromPreferences(false);
+		}
+		else {
+			pageobj.setWatchlistFromPreferences(true);
 		}
 		// pageobj.setCreateOption('recreate');
 		pageobj.save();

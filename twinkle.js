@@ -155,24 +155,28 @@ Twinkle.defaultConfig.twinkle = {
 };
 
 // now some skin dependent config.
-if ( mw.config.get( "skin" ) === "vector" ) {
-	Twinkle.defaultConfig.twinkle.portletArea = "right-navigation";
-	Twinkle.defaultConfig.twinkle.portletId   = "p-twinkle";
-	Twinkle.defaultConfig.twinkle.portletName = "TW";
-	Twinkle.defaultConfig.twinkle.portletType = "menu";
-	Twinkle.defaultConfig.twinkle.portletNext = "p-search";
-} else if ( mw.config.get( "skin" ) === "timeless" ) {
-	Twinkle.defaultConfig.twinkle.portletArea = "mw-related-navigation";
-	Twinkle.defaultConfig.twinkle.portletId   = "p-twinkle";
-	Twinkle.defaultConfig.twinkle.portletName = "Twinkle";
-	Twinkle.defaultConfig.twinkle.portletType = "menu";
-	Twinkle.defaultConfig.twinkle.portletNext = "page-tools";
-} else {
-	Twinkle.defaultConfig.twinkle.portletArea =  null;
-	Twinkle.defaultConfig.twinkle.portletId   = "p-cactions";
-	Twinkle.defaultConfig.twinkle.portletName = null;
-	Twinkle.defaultConfig.twinkle.portletType = null;
-	Twinkle.defaultConfig.twinkle.portletNext = null;
+switch ( mw.config.get( "skin" ) ) {
+		case "vector":
+			Twinkle.defaultConfig.twinkle.portletArea = "right-navigation";
+			Twinkle.defaultConfig.twinkle.portletId   = "p-twinkle";
+			Twinkle.defaultConfig.twinkle.portletName = "TW";
+			Twinkle.defaultConfig.twinkle.portletType = "menu";
+			Twinkle.defaultConfig.twinkle.portletNext = "p-search";
+			break;
+		case "timeless":
+			Twinkle.defaultConfig.twinkle.portletArea = "mw-related-navigation";
+			Twinkle.defaultConfig.twinkle.portletId   = "p-twinkle";
+			Twinkle.defaultConfig.twinkle.portletName = "Twinkle";
+			Twinkle.defaultConfig.twinkle.portletType = "menu";
+			Twinkle.defaultConfig.twinkle.portletNext = "page-tools";
+			break;
+		default:
+			Twinkle.defaultConfig.twinkle.portletArea =  null;
+			Twinkle.defaultConfig.twinkle.portletId   = "p-cactions";
+			Twinkle.defaultConfig.twinkle.portletName = null;
+			Twinkle.defaultConfig.twinkle.portletType = null;
+			Twinkle.defaultConfig.twinkle.portletNext = null;
+			break;
 }
 
 Twinkle.defaultConfig.friendly = {

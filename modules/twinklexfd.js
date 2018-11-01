@@ -300,16 +300,11 @@ Twinkle.xfd.callbacks = {
 					usertalkpage.setEditSummary("通知：页面[[" + Morebits.pageNameNorm + "]]存废讨论提名" + Twinkle.getPref('summaryAd'));
 					usertalkpage.setTags(Twinkle.getPref('revisionTags'));
 					usertalkpage.setCreateOption('recreate');
-					switch (Twinkle.getPref('xfdWatchUser')) {
-						case 'yes':
-							usertalkpage.setWatchlist(true);
-							break;
-						case 'no':
-							usertalkpage.setWatchlistFromPreferences(false);
-							break;
-						default:
-							usertalkpage.setWatchlistFromPreferences(true);
-							break;
+					if (Twinkle.getPref('xfdWatchUser') == 'no') {
+						usertalkpage.setWatchlistFromPreferences(false);
+					}
+					else {
+						usertalkpage.setWatchlistFromPreferences(true);
 					}
 					usertalkpage.setFollowRedirect(true);
 					usertalkpage.append();
@@ -378,16 +373,11 @@ Twinkle.xfd.callbacks = {
 			pageobj.setPageText(tag + text);
 			pageobj.setEditSummary(wgULS("页面存废讨论：[[", "頁面存廢討論：[[") + params.logpage + "#" + Morebits.pageNameNorm + "]]" + Twinkle.getPref('summaryAd'));
 			pageobj.setTags(Twinkle.getPref('revisionTags'));
-			switch (Twinkle.getPref('xfdWatchPage')) {
-				case 'yes':
-					pageobj.setWatchlist(true);
-					break;
-				case 'no':
-					pageobj.setWatchlistFromPreferences(false);
-					break;
-				default:
-					pageobj.setWatchlistFromPreferences(true);
-					break;
+			if (Twinkle.getPref('xfdWatchPage') == 'no') {
+				pageobj.setWatchlistFromPreferences(false);
+			}
+			else {
+				pageobj.setWatchlistFromPreferences(true);
 			}
 			// pageobj.setCreateOption('recreate');
 			pageobj.save();
@@ -463,16 +453,11 @@ Twinkle.xfd.callbacks = {
 			
 			pageobj.setEditSummary(wgULS("添加[[", "加入[[") + Morebits.pageNameNorm + "]]" + Twinkle.getPref('summaryAd'));
 			pageobj.setTags(Twinkle.getPref('revisionTags'));
-			switch (Twinkle.getPref('xfdWatchDiscussion')) {
-				case 'yes':
-					pageobj.setWatchlist(true);
-					break;
-				case 'no':
-					pageobj.setWatchlistFromPreferences(false);
-					break;
-				default:
-					pageobj.setWatchlistFromPreferences(true);
-					break;
+			if (Twinkle.getPref('xfdWatchDiscussion') == 'no') {
+				pageobj.setWatchlistFromPreferences(false);
+			}
+			else {
+				pageobj.setWatchlistFromPreferences(true);
 			}
 			pageobj.setCreateOption('recreate');
 			if (append) {
@@ -548,16 +533,11 @@ Twinkle.xfd.callbacks = {
 					usertalkpage.setEditSummary("通知：文件[[" + Morebits.pageNameNorm + "]]存废讨论提名" + Twinkle.getPref('summaryAd'));
 					usertalkpage.setTags(Twinkle.getPref('revisionTags'));
 					usertalkpage.setCreateOption('recreate');
-					switch (Twinkle.getPref('xfdWatchUser')) {
-						case 'yes':
-							usertalkpage.setWatchlist(true);
-							break;
-						case 'no':
-							usertalkpage.setWatchlistFromPreferences(false);
-							break;
-						default:
-							usertalkpage.setWatchlistFromPreferences(true);
-							break;
+					if (Twinkle.getPref('xfdWatchUser') == 'no') {
+						usertalkpage.setWatchlistFromPreferences(false);
+					}
+					else {
+						usertalkpage.setWatchlistFromPreferences(true);
 					}
 					usertalkpage.setFollowRedirect(true);
 					usertalkpage.append();
@@ -571,16 +551,11 @@ Twinkle.xfd.callbacks = {
 			pageobj.setPageText("{{ifd|" + Morebits.string.formatReasonText(params.reason) + "|date={{subst:#time:c}}}}\n" + text);
 			pageobj.setEditSummary(wgULS("文件存废讨论：[[", "檔案存廢討論：[[") + params.logpage + "#" + Morebits.pageNameNorm + "]]" + Twinkle.getPref('summaryAd'));
 			pageobj.setTags(Twinkle.getPref('revisionTags'));
-			switch (Twinkle.getPref('xfdWatchPage')) {
-				case 'yes':
-					pageobj.setWatchlist(true);
-					break;
-				case 'no':
-					pageobj.setWatchlistFromPreferences(false);
-					break;
-				default:
-					pageobj.setWatchlistFromPreferences(true);
-					break;
+			if (Twinkle.getPref('xfdWatchPage') == 'no') {
+				pageobj.setWatchlistFromPreferences(false);
+			}
+			else {
+				pageobj.setWatchlistFromPreferences(true);
 			}
 			pageobj.setCreateOption('recreate');  // it might be possible for a file to exist without a description page
 			pageobj.save();
@@ -592,16 +567,11 @@ Twinkle.xfd.callbacks = {
 			pageobj.setAppendText("\n{{subst:IfdItem|Filename=" + mw.config.get('wgTitle') + "|Uploader=" + params.uploader + "|Reason=" + Morebits.string.formatReasonText(params.reason) + "}}--~~~~");
 			pageobj.setEditSummary(wgULS("添加[[", "加入[[") + Morebits.pageNameNorm + "]]" + Twinkle.getPref('summaryAd'));
 			pageobj.setTags(Twinkle.getPref('revisionTags'));
-			switch (Twinkle.getPref('xfdWatchDiscussion')) {
-				case 'yes':
-					pageobj.setWatchlist(true);
-					break;
-				case 'no':
-					pageobj.setWatchlistFromPreferences(false);
-					break;
-				default:
-					pageobj.setWatchlistFromPreferences(true);
-					break;
+			if (Twinkle.getPref('xfdWatchDiscussion') == 'no') {
+				pageobj.setWatchlistFromPreferences(false);
+			}
+			else {
+				pageobj.setWatchlistFromPreferences(true);
 			}
 			pageobj.setCreateOption('recreate');
 			pageobj.append(function() {
@@ -836,16 +806,11 @@ Twinkle.xfd.aprilfool.todaysList = function(pageobj) {
 	pageobj.setAppendText("\n{{subst:DRItem|Type=" + type + "|DRarticles=" + Morebits.pageNameNorm + "|Reason=" + Morebits.string.formatReasonText(params.reason) + "|To=" + to + "}}~~~~");
 	pageobj.setEditSummary("添加[[" + Morebits.pageNameNorm + "]]" + Twinkle.getPref('summaryAd'));
 	pageobj.setTags(Twinkle.getPref('revisionTags'));
-	switch (Twinkle.getPref('xfdWatchDiscussion')) {
-		case 'yes':
-			pageobj.setWatchlist(true);
-			break;
-		case 'no':
-			pageobj.setWatchlistFromPreferences(false);
-			break;
-		default:
-			pageobj.setWatchlistFromPreferences(true);
-			break;
+	if (Twinkle.getPref('xfdWatchDiscussion') == 'no') {
+		pageobj.setWatchlistFromPreferences(false);
+	}
+	else {
+		pageobj.setWatchlistFromPreferences(true);
 	}
 	pageobj.setCreateOption('recreate');
 	pageobj.append();

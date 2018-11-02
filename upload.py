@@ -6,6 +6,7 @@ from os import path, environ
 from subprocess import Popen, PIPE
 from time import sleep
 from hashlib import sha256
+from getpass import getpass
 
 site = SetSite('zh.wikipedia.org')
 
@@ -49,4 +50,4 @@ def main(username, password, files):
 			sleep(t)
 
 if __name__ == "__main__":
-	main(argv[1], argv[2], argv[3:])
+	main(argv[1], getpass('密碼：'), argv[2:])

@@ -4,7 +4,7 @@ from mwclient import Site as SetSite
 from sys import argv
 from os import path, environ
 from subprocess import Popen, PIPE
-from time import sleep
+from time import sleep, time
 from hashlib import sha256
 from getpass import getpass
 
@@ -28,6 +28,7 @@ def list():
 	return files
 
 def upload(username, file):
+	start = time()
 	page = site.Pages["User: %s/%s" % (username, file)]
 	fp = open(file, "r")
 	text = fp.read()[:-1].rstrip()
@@ -38,7 +39,8 @@ def upload(username, file):
 	comment = "更新Twinkle至Gitlab最新版本。"
 	page.save(text.decode("utf-8"), summary=comment, bot=False)
 	print "Uploaded %s" % file
-	return 20
+	end = time()
+	return 20 + start - end
 
 def main(username, password, files):
 	login(username, password)

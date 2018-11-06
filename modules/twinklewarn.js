@@ -61,7 +61,7 @@ Twinkle.warn = function twinklewarn() {
 				(regexMatch = /^(?:回退|還原|取消|撤销|撤銷)(.+)(?:编辑|編輯|做出的編輯|做出的编辑|做出的修订版本|做出的修訂版本)/.exec(message[0].innerText))
 			) {
 				// Create a nicely-styled paragraph to place the link in
-				var $p = $('<p/>');
+				var $p = $('<p></p>');
 				$p.css("margin", "0.5em -1.5em -1.5em");
 				$p.css("padding", "0.5em 1.5em 0.8em");
 				$p.css("border-top", "1px #666 solid");
@@ -69,7 +69,7 @@ Twinkle.warn = function twinklewarn() {
 				$p.click(function(e) { e.stopPropagation(); });
 
 				// Create the new talk link and append it to the end of the message
-				var $vandalTalkLink = $('<a/>');
+				var $vandalTalkLink = $('<a></a>');
 				$vandalTalkLink.text("用Twinkle警告用户");
 				//$vandalTalkLink.css("display", "block");
 				$vandalTalkLink.attr("href", mw.util.getUrl("User talk:" + regexMatch[1]));
@@ -93,7 +93,7 @@ Twinkle.warn = function twinklewarn() {
 };
 
 Twinkle.warn.makeVandalTalkLink = function($vandalTalkLink, pagename) {
-	$vandalTalkLink.wrapInner($("<span/>").attr("title", wgULS("如果合适，您可以用Twinkle在该用户对话页上做出警告。", "如果合適，您可以用Twinkle在該用戶對話頁上做出警告。")));
+	$vandalTalkLink.wrapInner($("<span></span>").attr("title", wgULS("如果合适，您可以用Twinkle在该用户对话页上做出警告。", "如果合適，您可以用Twinkle在該用戶對話頁上做出警告。")));
 
 	var extraParam = "vanarticle=" + mw.util.rawurlencode(pagename);
 	var href = $vandalTalkLink.attr("href");

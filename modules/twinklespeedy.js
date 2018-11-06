@@ -995,7 +995,7 @@ Twinkle.speedy.callbacks = {
 			// prompt for protect on G11
 			var $link, $bigtext;
 			if (params.normalized === 'g11') {
-				$link = $('<a/>', {
+				$link = $('<a></a>', {
 					'href': '#',
 					'text': wgULS('点击这里施行保护', '點選這裡施行保護'),
 					'css': { 'fontSize': '130%', 'fontWeight': 'bold' },
@@ -1006,7 +1006,7 @@ Twinkle.speedy.callbacks = {
 						Twinkle.protect.callback();
 					}
 				});
-				$bigtext = $('<span/>', {
+				$bigtext = $('<span></span>', {
 					'text': wgULS('白纸保护该页', '白紙保護該頁'),
 					'css': { 'fontSize': '130%', 'fontWeight': 'bold' }
 				});
@@ -1015,7 +1015,7 @@ Twinkle.speedy.callbacks = {
 
 			// promote Unlink tool
 			if( mw.config.get('wgNamespaceNumber') === 6 && params.normalized !== 'f7' ) {
-				$link = $('<a/>', {
+				$link = $('<a></a>', {
 					'href': '#',
 					'text': wgULS('点击这里前往反链工具', '點選這裏前往反鏈工具'),
 					'css': { 'fontWeight': 'bold' },
@@ -1025,13 +1025,13 @@ Twinkle.speedy.callbacks = {
 						Twinkle.unlink.callback(wgULS("取消对已删除文件 ", "取消對已刪除檔案 ") + Morebits.pageNameNorm + " 的使用");
 					}
 				});
-				$bigtext = $('<span/>', {
+				$bigtext = $('<span></span>', {
 					'text': wgULS('取消对已删除文件的使用', '取消對已刪除檔案的使用'),
 					'css': { 'fontWeight': 'bold' }
 				});
 				Morebits.status.info($bigtext[0], $link[0]);
 			} else if (params.normalized !== 'f7') {
-				$link = $('<a/>', {
+				$link = $('<a></a>', {
 					'href': '#',
 					'text': wgULS('点击这里前往反链工具', '點選這裏前往反鏈工具'),
 					'css': { 'fontWeight': 'bold' },
@@ -1041,7 +1041,7 @@ Twinkle.speedy.callbacks = {
 						Twinkle.unlink.callback(wgULS("取消对已删除页面 ", "取消對已刪除頁面 ") + Morebits.pageNameNorm + wgULS(" 的链接", " 的連結"));
 					}
 				});
-				$bigtext = $('<span/>', {
+				$bigtext = $('<span></span>', {
 					'text': wgULS('取消对已删除页面的链接', '取消對已刪除頁面的連結'),
 					'css': { 'fontWeight': 'bold' }
 				});
@@ -1063,13 +1063,13 @@ Twinkle.speedy.callbacks = {
 			if (params.normalized === 'db' || Twinkle.getPref("promptForSpeedyDeletionSummary").indexOf(params.normalized) !== -1) {
 				// provide a link to the user talk page
 				var $link, $bigtext;
-				$link = $('<a/>', {
+				$link = $('<a></a>', {
 					'href': mw.util.wikiScript('index') + '?' + Morebits.queryString.create( query ),
 					'text': wgULS('点此打开User talk:', '點此開啟User talk:') + user,
 					'target': '_blank',
 					'css': { 'fontSize': '130%', 'fontWeight': 'bold' }
 				});
-				$bigtext = $('<span/>', {
+				$bigtext = $('<span></span>', {
 					'text': wgULS('通知页面创建者', '通知頁面建立者'),
 					'css': { 'fontSize': '130%', 'fontWeight': 'bold' }
 				});

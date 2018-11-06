@@ -664,7 +664,7 @@ Morebits.quickForm.element.autoNWSW = function() {
 };
 
 Morebits.quickForm.element.generateTooltip = function QuickFormElementGenerateTooltip( node, data ) {
-	$('<span/>', {
+	$('<span></span>', {
 			'class': 'ui-icon ui-icon-help ui-icon-inline morebits-tooltip'
 		}).appendTo(node).tipsy({
 			'fallback': data.tooltip,

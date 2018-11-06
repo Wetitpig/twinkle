@@ -368,7 +368,7 @@ Twinkle.arv.callback.changeCategory = function (e) {
 					}
 					for(var i = 0; i < page.revisions.length; ++i) {
 						var rev = page.revisions[i];
-						var $entry = $('<div/>', {
+						var $entry = $('<div></div>', {
 							'class': 'entry'
 						});
 						var $input = $('<input/>', {
@@ -405,7 +405,7 @@ Twinkle.arv.callback.changeCategory = function (e) {
 					}
 					for(var i = 0; i < page.revisions.length; ++i) {
 						var rev = page.revisions[i];
-						var $entry = $('<div/>', {
+						var $entry = $('<div></div>', {
 							'class': 'entry'
 						});
 						var $input = $('<input/>', {
@@ -447,7 +447,7 @@ Twinkle.arv.callback.changeCategory = function (e) {
 					}
 					for(var i = 0; i < page.revisions.length; ++i) {
 						var rev = page.revisions[i];
-						var $entry = $('<div/>', {
+						var $entry = $('<div></div>', {
 							'class': 'entry'
 						});
 						var $input = $('<input/>', {
@@ -461,7 +461,7 @@ Twinkle.arv.callback.changeCategory = function (e) {
 					}
 
 					// add free form input
-					var $free_entry = $('<div/>', {
+					var $free_entry = $('<div></div>', {
 						'class': 'entry'
 					});
 					var $free_input = $('<input/>', {
@@ -469,7 +469,7 @@ Twinkle.arv.callback.changeCategory = function (e) {
 						'name': 's_resolves_free'
 					});
 
-					var $free_label = $('<label/>', {
+					var $free_label = $('<label></label>', {
 						'for': 's_resolves_free',
 						'html': 'Diff to additional discussions: '
 					});

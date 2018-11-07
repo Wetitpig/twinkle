@@ -1,0 +1,115 @@
+/*Twinkle裝飾*/
+
+#tw-arv a {
+	background: linear-gradient(to right, #000, #000 60%, #FFF);
+	background-color: #000;
+	color: #FFF;
+}
+
+#tw-warn a {
+	background: linear-gradient(to right, #F90, #F90 60%, #FF0);
+	background-color: #F90;
+	color: #000;
+}
+
+#friendly-talkback a {
+	background: linear-gradient(to right, #6CF, #6CF 60%, #0FF);
+	background-color: #6CF;
+	color: #00F;
+}
+
+#tw-csd a {
+	background: linear-gradient(to right, #F88, #F88 60%, #F00);
+	background-color: #F88;
+	color: #800;
+}
+
+#tw-copyvio a {
+	background: linear-gradient(to right, #036, #036 60%, #00F);
+	background-color: #036;
+	color: #FFF;
+}
+
+#tw-xfd a {
+	background: linear-gradient(to right, #600, #600 60%, #000);
+	background-color: #600;
+	color: #FFF;
+}
+
+#tw-rpp a {
+	background: linear-gradient(to right, #0F0, #0F0 60%, #FF0);
+	background-color: #0F0;
+	color: #000;
+}
+
+#friendly-tag a {
+	background: linear-gradient(to right, #CCC, #CCC 60%, #FFF);
+	background-color: #CCC;
+	color: #000;
+}
+
+#tw-lastdiff a {
+	background: linear-gradient(to right, #480, #480 60%, #0F0);
+	background-color: #480;
+	color: #FFF;
+}
+
+#tw-di a {
+	background: linear-gradient(to right, #00F, #00F 60%, #0FF);
+	background-color: #00F;
+	color: #FFF;
+}
+
+#tw-config a {
+	background: linear-gradient(to right, #FF0, #FF0 60%, #FFF);
+	background-color: #FF0;
+	color: #000;
+}
+
+#tw-batch a {
+	background: linear-gradient(to right, #F00, #F00 60%, #F0F);
+	background-color: #F00;
+	color: #FFF;
+}
+
+#tw-batch-undel a {
+	background: linear-gradient(to right, #0F9, #0F9 60%, #0F0);
+	background-color: #0F9;
+	color: #000;
+}
+
+#tw-block a {
+	background: linear-gradient(to right, #FFF, #FFF 60%, #000);
+	background-color: #FFF;
+	color: #000;
+}
+
+#tw-unlink a {
+	background: linear-gradient(to right, #F06, #F06 60%, #F0F);
+	background-color: #F06;
+	color: #FFF;
+}
+
+#tw-xfd-april-fool a {
+	background: linear-gradient(to right, #6FF, #6FF 60%, #0FF);
+	background-color: #6FF;
+	color: #000;
+}
+
+#tw-curdiff a {
+	background: linear-gradient(to right, #360, #360 60%, #0F0);
+	background-color: #360;
+	color: #FFF;
+}
+
+#tw-since a {
+	background: linear-gradient(to right, #F30, #F30 60%, #F00);
+	background-color: #F30;
+	color: #000;
+}
+
+#tw-sincemine a {
+	background: linear-gradient(to right, #F55, #F55 60%, #F00);
+	background-color: #F55;
+	color: #000;
+}

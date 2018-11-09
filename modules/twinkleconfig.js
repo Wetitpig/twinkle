@@ -914,9 +914,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 			return;  // maybe the page is misconfigured, or something - but any attempt to modify it will be pointless
 		}
 
-		// set style (the url() CSS function doesn't seem to work from wikicode - ?!)
-		document.getElementById("twinkle-config-titlebar").style.backgroundImage = "linear-gradient(#D7DEEE, #A1AEC9)";
-
 		var contentdiv = document.getElementById("twinkle-config-content");
 		contentdiv.textContent = "";  // clear children
 
@@ -935,7 +932,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 		// start a table of contents
 		var toctable = document.createElement("div");
 		toctable.className = "toc";
-		toctable.style.marginLeft = "0.4em";
 		// create TOC title
 		var toctitle = document.createElement("div");
 		toctitle.id = "toctitle";
@@ -976,7 +972,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 		contentdiv.appendChild(contentform);
 
 		var container = document.createElement("table");
-		container.style.width = "100%";
 		contentform.appendChild(container);
 
 		$(Twinkle.config.sections).each(function(sectionkey, section) {
@@ -1004,8 +999,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 			var cell = document.createElement("td");
 			cell.setAttribute("colspan", "3");
 			var heading = document.createElement("h4");
-			heading.style.borderBottom = "1px solid gray";
-			heading.style.marginTop = "0.2em";
 			heading.id = "twinkle-config-section-" + (tocnumber++).toString();
 			heading.appendChild(document.createTextNode(section.title));
 			cell.appendChild(heading);
@@ -1022,6 +1015,7 @@ Twinkle.config.init = function twinkleconfigInit() {
 
 				row = document.createElement("tr");
 				row.style.marginBottom = "0.2em";
+
 				// create odd row banding
 				if (rowcount++ % 2 === 0) {
 					row.style.backgroundColor = "rgba(128, 128, 128, 0.1)";
@@ -1204,7 +1198,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 					} else {  // standards
 						resetlink.style.cssFloat = "right";
 					}
-					resetlink.style.margin = "0 0.6em";
 					resetlink.appendChild(document.createTextNode(wgULS("复位", "復位")));
 					cell.appendChild(resetlink);
 				}
@@ -1218,8 +1211,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 
 		var footerbox = document.createElement("div");
 		footerbox.setAttribute("id", "twinkle-config-buttonpane");
-		footerbox.style.backgroundColor = "#BCCADF";
-		footerbox.style.padding = "0.5em";
 		var button = document.createElement("button");
 		button.setAttribute("id", "twinkle-config-submit");
 		button.setAttribute("type", "submit");
@@ -1227,8 +1218,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 		footerbox.appendChild(button);
 		var footerspan = document.createElement("span");
 		footerspan.className = "plainlinks";
-		footerspan.style.marginLeft = "2.4em";
-		footerspan.style.fontSize = "90%";
 		var footera = document.createElement("a");
 		footera.setAttribute("href", "#tw-reset-all");
 		footera.setAttribute("id", "twinkle-config-resetall");
@@ -1249,11 +1238,6 @@ Twinkle.config.init = function twinkleconfigInit() {
 
 		var box = document.createElement("div");
 		box.setAttribute("id", "twinkle-config-headerbox");
-		box.style.border = "1px #f60 solid";
-		box.style.background = "#fed";
-		box.style.padding = "0.6em";
-		box.style.margin = "0.5em auto";
-		box.style.textAlign = "center";
 
 		var link,
 			scriptPageName = mw.config.get("wgPageName").slice(mw.config.get("wgPageName").lastIndexOf("/") + 1,
@@ -1327,7 +1311,6 @@ Twinkle.config.listDialog.addRow = function twinkleconfigListDialogAddRow(dlgtab
 	var input = document.createElement("input");
 	input.setAttribute("type", "text");
 	input.className = "twinkle-config-customlist-value";
-	input.style.width = "97%";
 	if (value) {
 		input.setAttribute("value", value);
 	}
@@ -1339,7 +1322,6 @@ Twinkle.config.listDialog.addRow = function twinkleconfigListDialogAddRow(dlgtab
 	input = document.createElement("input");
 	input.setAttribute("type", "text");
 	input.className = "twinkle-config-customlist-label";
-	input.style.width = "98%";
 	if (label) {
 		input.setAttribute("value", label);
 	}
@@ -1359,10 +1341,9 @@ Twinkle.config.listDialog.display = function twinkleconfigListDialogDisplay(e) {
 	dialog.setScriptName(wgULS("Twinkle参数设置", "Twinkle偏好設定"));
 
 	var dialogcontent = document.createElement("div");
+	dialogcontent.setAttribute("id", "tw-config-dialog");
 	var dlgtable = document.createElement("table");
 	dlgtable.className = "wikitable";
-	dlgtable.style.margin = "1.4em 1em";
-	dlgtable.style.width = "97%";
 
 	var dlgtbody = document.createElement("tbody");
 
@@ -1833,8 +1814,6 @@ Twinkle.config.saveSuccess = function twinkleconfigSaveSuccess(pageobj) {
 
 	var noticebox = document.createElement("div");
 	noticebox.className = "successbox";
-	noticebox.style.fontSize = "100%";
-	noticebox.style.marginTop = "2em";
 	noticebox.innerHTML = wgULS("<p><b>您的Twinkle参数设置已被保存。</b></p><p>要看到这些更改，您可能需要<a href=\"" + mw.util.getUrl("WP:BYPASS") + "\" title=\"WP:BYPASS\"><b>绕过浏览器缓存</b></a>。</p>", "<p><b>您的Twinkle偏好設定已被儲存。</b></p><p>要看到這些更改，您可能需要<a href=\"" + mw.util.getUrl("WP:BYPASS") + "\" title=\"WP:BYPASS\"><b>繞過瀏覽器快取</b></a>。</p>");
 	Morebits.status.root.appendChild(noticebox);
 	var noticeclear = document.createElement("br");

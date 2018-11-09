@@ -1,0 +1,58 @@
+#twinkle-config-titlebar {
+	background-image: linear-gradient(#D7DEEE,#A1AEC9) !important;
+}
+
+#twinkle-config-content .toc {
+	margin-left: 0.4em;
+}
+
+#twinkle-config-content form table {
+	width: 100%;
+}
+
+#twinkle-config-content form table tr td h4[id^=twinkle-config-section] {
+	border-bottom: 1px solid gray;
+	margin-top: 0.2em
+
+}
+
+#tw-reset {
+	margin: 0 0.6em;
+}
+
+#twinkle-config-buttonpane {
+	background-color: #BCCADF;
+	padding: 0.5em;
+}
+
+#twinkle-config-buttonpane .plainlinks {
+	margin-left: 2.4em;
+	font-size: 90%;
+}
+
+#twinkle-config-headerbox {
+	border: 1px #F60 solid;
+	background: #FED;
+	padding: 0.6em;
+	margin: 0.5em auto;
+	text-align: center;
+}
+
+.twinkle-config-customlist-value {
+	width: 97%;
+}
+
+.twinkle-config-customlist-label {
+	width: 98%;
+}
+
+#tw-config-dialog .wikitable {
+	margin: 1.4em 1em;
+	width: 97%;
+}
+
+.successbox {
+	font-size: 100%;
+	margin-top: 2em;
+
+}

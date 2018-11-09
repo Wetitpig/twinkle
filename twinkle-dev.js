@@ -44,7 +44,8 @@
     ];
 
     var styles = ['morebits.css',
-    'twinkle.css'
+    'twinkle.css',
+    'modules/twinkleconfig.css'
     ];
 
     var i=0;

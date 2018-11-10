@@ -1546,7 +1546,8 @@ Twinkle.config.resetAllPrefs = function twinkleconfigResetAllPrefs() {
 Twinkle.config.save = function twinkleconfigSave(e) {
 	Morebits.status.init( document.getElementById("twinkle-config-content") );
 
-	Morebits.wiki.actionCompleted.notice = wgULS("保存", "儲存");
+	Morebits.wiki.actionCompleted.notice = wgULS("保存完成，将在几秒后刷新", "儲存完成，將在幾秒後重新整理");
+	Morebits.wiki.actionCompleted.redirect = "User:" + mw.config.get("wgUserName") + "/twinkleoptions.js";
 
 	var userjs = mw.config.get("wgFormattedNamespaces")[mw.config.get("wgNamespaceIds").user] + ":" + mw.config.get("wgUserName") + "/twinkleoptions.js";
 	var wikipedia_page = new Morebits.wiki.page(userjs, wgULS("保存参数设置到 ", "儲存偏好設定到 ") + userjs);

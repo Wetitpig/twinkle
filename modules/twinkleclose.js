@@ -538,7 +538,8 @@ Twinkle.close.callback.evaluate = function twinklecloseCallbackEvaluate(e) {
 	Morebits.simpleWindow.setButtonsEnabled( false );
 	Morebits.status.init( e.target );
 
-	Morebits.wiki.actionCompleted.notice = "操作完成";
+	Morebits.wiki.actionCompleted.notice = wgULS("关闭完成，将在几秒后刷新", "關閉完成，將在幾秒後重新整理");;
+	Morebits.wiki.actionCompleted.redirect = mw.config.get('wgPageName');
 
 	if (noop || messageData.action === 'noop') {
 		Twinkle.close.callbacks.talkend( params );
@@ -554,8 +555,7 @@ Twinkle.close.callback.evaluate = function twinklecloseCallbackEvaluate(e) {
 				wikipedia_page.load( Twinkle.close.callbacks.keep );
 				break;
 			default:
-				alert("Twinkle.close：未定义 " + code);
-				return;
+				break;
 		}
 	}
 };
@@ -641,6 +641,7 @@ Twinkle.close.callbacks = {
 
 	talkend: function (params) {
 		var wikipedia_page = new Morebits.wiki.page(mw.config.get('wgPageName'), wgULS('关闭讨论', '關閉討論'));
+		wikipedia_page.setFollowRedirect(true);
 		wikipedia_page.setCallbackParameters(params);
 		wikipedia_page.setPageSection(params.section);
 		wikipedia_page.load(Twinkle.close.callbacks.saveTalk);

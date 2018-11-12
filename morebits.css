@@ -69,8 +69,7 @@ form.quickform select
 form.quickform input[type=checkbox],
 form.quickform input[type=radio] {
 	height: 13px;
-	margin-bottom: 2px;
-	margin-top: 2px;
+	margin: 2px 0px;
 	padding: 0;
 	width: 13px;
 	vertical-align: top;
@@ -136,8 +135,7 @@ div.morebits-scrollbox
 {
 	background: white;
 	border: 1px solid gray;
-	margin-bottom: .6em;
-	margin-top: .6em;
+	margin: .6em 0em;
 	max-height: 20em;
 	overflow: auto;
 	padding: 6px 6px 0;
@@ -185,7 +183,7 @@ div.morebits-previewbox .mw-editsection
 .skin-modern #mw_contentwrapper div.portlet {
 	overflow: hidden;
 	height: 1.5em;
-	margin: 0 0 0 14em;
+	margin-left: 14em;
 	padding: 0;
 }
 
@@ -226,8 +224,7 @@ div.morebits-previewbox .mw-editsection
 .morebits-dialog {
 	border: 1px #666 solid;
 	font: small sans-serif;
-	background-color: #F0F8FF !important;
-	background-image: none !important;
+	background: #F0F8FF !important none !important;
 }
 
 body.skin-monobook .morebits-dialog {

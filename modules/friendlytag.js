@@ -404,6 +404,7 @@ Twinkle.tag.article.tags = wgULS({
 	"notability": "可能不符合通用关注度指引",
 	"Notability Unreferenced": "可能具备关注度，但需要来源加以彰显",
 	"notmandarin": "包含过多不是现代标准汉语的内容",
+	"off topic": "条目离题",
 	"onesource": "极大或完全地依赖于某个单一的来源",
 	"original research": "可能包含原创研究或未查证内容",
 	"orphan": "没有或只有很少链入页面",
@@ -421,8 +422,8 @@ Twinkle.tag.article.tags = wgULS({
 	"review": "阅读起来类似评论，需要清理",
 	"rewrite": "不符合维基百科的质量标准，需要完全重写",
 	"roughtranslation": "翻译品质不佳",
-	"substub": "过于短小",
 	"spacing": "不易读",
+	"substub": "过于短小",
 	"too many see alsos": "过多参见",
 	"too many photos": "过多照片",
 	"trivia": "应避免有陈列杂项、琐碎资料的部分",
@@ -473,6 +474,7 @@ Twinkle.tag.article.tags = wgULS({
 	"notability": "可能不符合通用關注度指引",
 	"Notability Unreferenced": "可能具備關注度，但需要來源加以彰顯",
 	"notmandarin": "包含過多不是現代標準漢語的內容",
+	"off topic": "條目離題",
 	"onesource": "極大或完全地依賴於某個單一的來源",
 	"original research": "可能包含原創研究或未查證內容",
 	"orphan": "沒有或只有很少連入頁面",
@@ -554,6 +556,7 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"expand language", // has subcategories and special-cased code
 			"expand",
 			"missing information", // has subcategories and special-cased code
+			"off topic",
 			"repetition",
 			"substub",
 			"unencyclopedic"
@@ -623,12 +626,16 @@ Twinkle.tag.article.tagCategories = wgULS({
 		"常規清理": [
 			"cleanup",
 			"cleanup-jargon",
-			"copyedit"
+			"copyedit",
+                        "overcolored",
+                        "spacing"
 		],
 		"可能多餘的內容": [
 			"copypaste",
 			"external links",
-			"non-free"
+			"non-free",
+			"too many photos",
+			"too many see alsos"
 		],
 		"結構和導言": [
 			"lead section",
@@ -656,8 +663,14 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"review"
 		],
 		"內容": [
+<<<<<<< HEAD
 			"missing information", // has subcategories and special-cased code
 			"expand language", // has subcategories and special-cased code
+=======
+			"expand",
+			"off topic",
+			"repetition",
+>>>>>>> 6605f16... Add off topic and fix 繁體字 bugs
 			"substub",
 			"unencyclopedic"
 		],
@@ -677,6 +690,7 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"globalize",
 			"hoax",
 			"pov",
+			"undisclosed paid",
 			"weasel"
 		],
 		"可供查證和來源": [
@@ -699,15 +713,16 @@ Twinkle.tag.article.tagCategories = wgULS({
 		],
 		"連結": [
 			"dead end",
-			"underlinked",
 			"orphan",
-			"overlinked"
+			"overlinked",
+			"underlinked"
 		],
 		"參考技術": [
 			"citation style"
 		],
 		"分類": [
 			"catimprove",
+			"recat",
 			"uncategorized"
 		]
 	},

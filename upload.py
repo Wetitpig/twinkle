@@ -2,7 +2,6 @@
 
 from mwclient import Site as SetSite
 from sys import argv
-from os import path, environ
 from subprocess import Popen, PIPE
 from time import sleep, time
 from hashlib import sha256
@@ -19,7 +18,7 @@ def login(username, password):
 		print e[1]['result']
 
 def list():
-	if path.isfile("%s/bin/busybox" % environ['PREFIX']):
+	if Popen(["which busybox"], shell=True, stdout=PIPE).communicate()[0] == "":
 		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) | sed 's|^./||'"], shell=True, stdout=PIPE)
 	else:
 		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) -printf '%P\n'"], shell=True, stdout=PIPE)
@@ -61,4 +60,4 @@ def main(username, password, files):
 			sleep(t)
 
 if __name__ == "__main__":
-	main(argv[1], getpass('密碼：'), argv[2:])
+	main(argv[1], argv[2], argv[3:])

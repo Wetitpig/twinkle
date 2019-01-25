@@ -2,8 +2,5 @@ image: ubuntu:bionic
 
 upload:
     script:
-        - apt-get update
-        - apt-get -y upgrade
-        - apt-get install -y -q python python-pip
-        - pip install mwclient rjsmin rcssmin
+        - bash dockerscript.sh
         - python upload.py Wetittwinkle $WIKIPASS

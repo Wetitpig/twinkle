@@ -663,14 +663,11 @@ Twinkle.tag.article.tagCategories = wgULS({
 			"review"
 		],
 		"內容": [
-<<<<<<< HEAD
 			"missing information", // has subcategories and special-cased code
 			"expand language", // has subcategories and special-cased code
-=======
 			"expand",
 			"off topic",
 			"repetition",
->>>>>>> 6605f16... Add off topic and fix 繁體字 bugs
 			"substub",
 			"unencyclopedic"
 		],

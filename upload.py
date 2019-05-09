@@ -18,10 +18,7 @@ def login(username, password):
 		print e[1]['result']
 
 def list():
-	if Popen(["which busybox"], shell=True, stdout=PIPE).communicate()[0] == "":
-		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) | sed 's|^./||'"], shell=True, stdout=PIPE)
-	else:
-		cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) -printf '%P\n'"], shell=True, stdout=PIPE)
+	cmd = Popen(["find . \( -name '*.js' -o -name '*.css' \) | sed 's|^./||'"], shell=True, stdout=PIPE)
 	files = cmd.communicate()[0].split('\n')[:-1]
 	print "Number of Files Found: %s" % str(len(files))
 	return files

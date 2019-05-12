@@ -31,7 +31,7 @@ Twinkle.stub = function friendlytag() {
 	// article/draft article tagging
 	else if( ( ( mw.config.get('wgNamespaceNumber') === 0 || mw.config.get('wgNamespaceNumber') === 118 ) && mw.config.get('wgCurRevisionId') ) || ( Morebits.pageNameNorm === Twinkle.getPref("sandboxPage") ) ) {
 		Twinkle.stub.mode = wgULS('条目', '條目');
-		Twinkle.addPortletLink(Twinkle.stub.callback, "小作品", "friendly-tag", wgULS("标记小作品", "標記小作品"));
+		Twinkle.addPortletLink(Twinkle.stub.callback, "短文", "tw-stub", wgULS("标记小作品", "標記小作品"));
 	}
 };
 
